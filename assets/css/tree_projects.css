@@ -1,16 +1,21 @@
-/* From Uiverse.io by NlghtM4re */
-
-.container {
-  width: 100%;
+.card {
+  width: 195px;
+  height: 285px;
+  background: #000000;
+  border-radius: 20px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  color: white;
+  transition: 0.2s ease-in-out;
 }
 
 .tree {
   position: relative;
   width: 50px;
   height: 50px;
+  top: 30px;
   transform-style: preserve-3d;
   transform: rotateX(-20deg) rotateY(30deg);
   animation: treeAnimate 5s linear infinite;
@@ -70,5 +75,41 @@
   filter: blur(20px);
   transform-style: preserve-3d;
   transform: rotateX(90deg) translateZ(-65px);
+}
+
+.textBox {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  transition: 0.2s ease-in-out;
+  z-index: 2;
+}
+
+.textBox > .text {
+  font-weight: bold;
+}
+
+.textBox > .head {
+  font-size: 20px;
+}
+
+.textBox > .price {
+  font-size: 17px;
+}
+
+.textBox > span {
+  font-size: 12px;
+  color: lightgrey;
+}
+
+.card:hover > .textBox {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: scale(1.04) rotate(-1deg);
 }
 
